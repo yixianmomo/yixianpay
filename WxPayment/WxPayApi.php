@@ -8,7 +8,7 @@
  *
  */
 
-namespace Yixianbinbin\WxPayment;
+namespace Yixianmomo\WxPayment;
 
 class WxPayApi
 {

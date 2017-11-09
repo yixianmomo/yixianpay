@@ -5,7 +5,7 @@
  * @author widyhu
  *
  */
-namespace Yixianbinbin\WxPayment;
+namespace Yixianmomo\WxPayment;
 class WxPayNotify extends WxPayNotifyReply
 {
 	/**

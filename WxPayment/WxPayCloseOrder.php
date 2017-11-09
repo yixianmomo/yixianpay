@@ -5,7 +5,7 @@
  * Date: 2017/5/24
  * Time: 11:06
  */
-namespace Yixianbinbin\WxPayment;
+namespace Yixianmomo\WxPayment;
 /**
  *
  * 关闭订单输入对象

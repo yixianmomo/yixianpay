@@ -5,7 +5,7 @@
  * Date: 2017/5/24
  * Time: 11:24
  */
-namespace Yixianbinbin\WxPayment;
+namespace Yixianmomo\WxPayment;
 
 class WxCallBack{
 

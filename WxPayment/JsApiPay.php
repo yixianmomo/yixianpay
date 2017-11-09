@@ -5,7 +5,7 @@
  * Date: 2017/5/25
  * Time: 9:14
  */
-namespace App\Libs\WeChat\Pay;
+namespace Yixianmomo\WxPayment;
 /**
  *
  * JSAPI支付实现类

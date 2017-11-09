@@ -5,7 +5,7 @@
  * Date: 2017/5/23
  * Time: 15:56
  */
-namespace Yixianbinbin\WxPayment;
+namespace Yixianmomo\WxPayment;
 /**
  *
  * 回调基础类

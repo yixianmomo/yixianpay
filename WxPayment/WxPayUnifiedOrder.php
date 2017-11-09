@@ -6,7 +6,7 @@
  * Time: 14:54
  */
 
-namespace Yixianbinbin\WxPayment;
+namespace Yixianmomo\WxPayment;
 /**
  *
  * 统一下单输入对象

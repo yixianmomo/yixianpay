@@ -5,7 +5,7 @@
  * Date: 2017/5/23
  * Time: 15:06
  */
-namespace Yixianbinbin\WxPayment;
+namespace Yixianmomo\WxPayment;
 class WxPayDataBase
 {
     protected $values = array();

@@ -3,7 +3,7 @@
  * wap支付类
  * author:caoyixian
  */
-namespace Yixianbinbin\AliPayment;
+namespace Yixianmomo\WxPayment;
 
 class AppAlipay
 {

@@ -6,7 +6,7 @@
  * Time: 11:07
  */
 
-namespace Yixianbinbin\WxPayment;
+namespace Yixianmomo\WxPayment;
 /**
  *
  * 提交退款输入对象

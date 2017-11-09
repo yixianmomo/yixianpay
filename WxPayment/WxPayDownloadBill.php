@@ -5,7 +5,7 @@
  * Date: 2017/5/24
  * Time: 11:14
  */
-namespace Yixianbinbin\WxPayment;
+namespace Yixianmomo\WxPayment;
 /**
  *
  * 下载对账单输入对象

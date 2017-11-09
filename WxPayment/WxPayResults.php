@@ -1,5 +1,5 @@
 <?php
-namespace Yixianbinbin\WxPayment;
+namespace Yixianmomo\WxPayment;
 /**
 *
 * 接口调用结果类

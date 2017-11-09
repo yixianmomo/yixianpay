@@ -5,7 +5,7 @@
  * Date: 2017/9/20 0020
  * Time: 上午 10:00
  */
-namespace Yixianbinbin\AliPayment;
+namespace Yixianmomo\WxPayment;
 
 class AliPayWithdrawCashToAccount
 {

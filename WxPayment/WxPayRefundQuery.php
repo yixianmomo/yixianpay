@@ -5,7 +5,7 @@
  * Date: 2017/5/24
  * Time: 11:10
  */
-namespace Yixianbinbin\WxPayment;
+namespace Yixianmomo\WxPayment;
 /**
  *
  * 退款查询输入对象

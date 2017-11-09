@@ -11,7 +11,7 @@
  * @author widyhu
  *
  */
-namespace Yixianbinbin\WxPayment;
+namespace Yixianmomo\WxPayment;
 class WxPayReport extends WxPayDataBase
 {
     /**

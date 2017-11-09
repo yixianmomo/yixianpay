@@ -2,7 +2,7 @@
 /**
 * 	配置账号信息
 */
-namespace Yixianbinbin\WxPayment;
+namespace Yixianmomo\WxPayment;
 class WxPayConfig
 {
 	//=======【基本信息设置】=====================================
