@@ -15,9 +15,9 @@
     },
     "autoload": {
         "psr-4": {
-            "Yixianbinbin\\AliPayment\\": "AliPayment",
-            "Yixianbinbin\\WxPayment\\": "WxPayment",
-            "Yixianbinbin\\WxChat\\": "WxChat"
+            "Yixianmomo\\AliPayment\\": "AliPayment",
+            "Yixianmomo\\WxPayment\\": "WxPayment",
+            "Yixianmomo\\WxChat\\": "WxChat"
         }
     }
 }
