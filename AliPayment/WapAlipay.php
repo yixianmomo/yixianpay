@@ -123,7 +123,7 @@ class WapAlipay
         $data = $_POST ?  : $_GET;
 
         // 生成签名结果
-        $is_sign = $this->getSignVeryfy($data, $data['sign']);
+        $is_sign = $this->getSignVerify($data, $data['sign']);
 
         // 获取支付宝远程服务器ATN结果（验证是否是支付宝发来的消息）
         $response_txt = 'true';
@@ -286,7 +286,7 @@ class WapAlipay
      * @param $sign 返回的签名结果
      * @return 签名验证结果
      */
-    function getSignVeryfy($para_temp, $sign)
+    function getSignVerify($para_temp, $sign)
     {
         //除去待签名参数数组中的空值和签名参数
         $para_filter = $this->paraFilter($para_temp);
