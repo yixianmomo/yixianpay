@@ -1,5 +1,5 @@
 <?php
-namespace Yixianmomo\WxPayment;
+namespace Yixianmomo\AliPayment;
 class NotifyAlipay
 {
     private $sign_type;

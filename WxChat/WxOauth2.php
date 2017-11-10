@@ -6,7 +6,7 @@
  * Time: 下午 9:04
  */
 
-namespace Yixianmomo\WxPayment;
+namespace Yixianmomo\WxChat;
 
 
 class WxOauth2

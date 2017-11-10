@@ -24,7 +24,7 @@
  * @see      http://overtrue.me
  */
 
-namespace Yixianmomo\WxPayment;
+namespace Yixianmomo\WxChat;
 
 class WxInterface
 {

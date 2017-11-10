@@ -4,7 +4,7 @@
  * 决定自己动手  写一个标准支付类
  * author:caoyixian
  */
-namespace Yixianmomo\WxPayment;
+namespace Yixianmomo\AliPayment;
 
 class WapAlipay
 {

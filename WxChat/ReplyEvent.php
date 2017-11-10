@@ -1,6 +1,6 @@
 <?php
 
-namespace Yixianmomo\WxPayment;
+namespace Yixianmomo\WxChat;
 
 
 class ReplyEvent
