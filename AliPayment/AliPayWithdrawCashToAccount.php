@@ -32,25 +32,11 @@ class AliPayWithdrawCashToAccount
 
     private $public_key_path;
 
-    private $notify_url;
-
-    private $return_url;
-
     private $out_biz_no;
-
-    private $subject;
-
-    private $payment_type = 1;
-
-    private $seller_id;
-
-    private $total_fee;
 
     private $amount;
 
     private $payee_account;
-
-    private $passback_params;
 
     private $key;
 
@@ -78,37 +64,19 @@ class AliPayWithdrawCashToAccount
     public function getPayPara()
     {
         $parameter = array(
-            'sign_type' => $this->sign_type,//
-            'method' => $this->service,//
-            'timestamp' => $this->timestamp,//
-            'app_id' => $this->app_id,//
-            'charset' => $this->charset,//
-            'version' => $this->version,//
-            'format' => $this->format,//
+            'sign_type' => $this->sign_type,
+            'method' => $this->service,
+            'timestamp' => $this->timestamp,
+            'app_id' => $this->app_id,
+            'charset' => $this->charset,
+            'version' => $this->version,
+            'format' => $this->format,
             'biz_content' => $this->get_biz_content()
         );
 
-//        $para = $this->buildRequestPara($parameter);
-
-//        return $this->https_url.$this->createLinkstringUrlencode($para);
-
         $para = $this->buildRequestPara($parameter);
-        //按照支付宝要求进行encode
-        //设定编码
-//        $this->setupCharsets($para);
-//        if (strcasecmp($this->fileCharset, $this->postCharset)) {
-//            // writeLog("本地文件字符集编码与表单提交编码不一致，请务必设置成一样，属性名分别为postCharset!");
-//            throw new Exception("文件编码：[" . $this->fileCharset . "] 与表单提交编码：[" . $this->postCharset . "]两者不一致!");
-//        }
-//        foreach($para as $k=>$v){
-//            if(!empty($v)) {
-//                $value = $this->characet($v, $this->postCharset);
-//                $para[$k] = $value;
-//            }
-//
-//        }
-        return $para; //返回原生支付需要用到的参数;
 
+        return $para; //返回原生支付需要用到的参数;
 
     }
 
@@ -116,9 +84,9 @@ class AliPayWithdrawCashToAccount
     protected function get_biz_content()
     {
         $biz_content = array(
-            'out_biz_no' => $this->out_biz_no,//
-            'payee_type' => $this->payee_type,//
-            'payee_account' => $this->payee_account,//收货帐号
+            'out_biz_no' => $this->out_biz_no,
+            'payee_type' => $this->payee_type,
+            'payee_account' => $this->payee_account,
             'amount' => $this->amount,
             'remark' => $this->remark
         );
@@ -183,17 +151,7 @@ class AliPayWithdrawCashToAccount
         return $this;
     }
 
-    public function setNotifyUrl($notify_url)
-    {
-        $this->notify_url = $notify_url;
-        return $this;
-    }
 
-    public function setReturnUrl($return_url)
-    {
-        $this->return_url = $return_url;
-        return $this;
-    }
 
     public function setOutBizNo($out_biz_no)
     {
@@ -219,23 +177,6 @@ class AliPayWithdrawCashToAccount
         return $this;
     }
 
-    public function setSellerId($seller_id)
-    {
-        $this->seller_id = $seller_id;
-        return $this;
-    }
-
-    public function setSubject($subject)
-    {
-        $this->subject = $subject;
-        return $this;
-    }
-
-    public function setTotalFee($total_fee)
-    {
-        $this->total_fee = $total_fee;
-        return $this;
-    }
 
     public function setAmount($amount)
     {
@@ -249,23 +190,6 @@ class AliPayWithdrawCashToAccount
         return $this;
     }
 
-    public function setCacert($cacert)
-    {
-        $this->cacert = $cacert;
-        return $this;
-    }
-
-    public function setService($service)
-    {
-        $this->service = $service;
-        return $this;
-    }
-
-    public function setPassback_params($passback_params)
-    {
-        $this->passback_params = $passback_params;
-        return $this;
-    }
 
     /**
      * 生成要请求给支付宝的参数数组
@@ -420,9 +344,7 @@ class AliPayWithdrawCashToAccount
     protected function sign($data, $signType = "RSA")
     {
 
-        $adata = 'alipay_sdk=alipay-sdk-php-20161101&app_id=2017071807798302&biz_content={"productCode":"QUICK_WAP_PAY","body":"购买测试商品0.01元","subject":"测试","out_trade_no":"2017722165136381","total_amount":"0.01","timeout_express":"1m"}&charset=UTF-8&format=json&method=alipay.trade.wap.pay&notify_url=http://api.sixishop.com/alipay/notify/&return_url=http://m.sixishop.com&sign_type=RSA&timestamp=2017-07-22 12:09:37&version=1.0';
-        //  echo '原始>>>'.$adata."<br/>".$signType.'<br/>';
-        //   echo '当前>>>'.$data."<br/>".$signType.'<br/>';
+
         if (!file_exists($this->private_key_path)) {
             $priKey = $this->private_key_path;
             $res = "-----BEGIN RSA PRIVATE KEY-----\n" .
@@ -561,7 +483,7 @@ class AliPayWithdrawCashToAccount
             $veryfy_url = $this->__http_verify_url;
         }
         $veryfy_url = $veryfy_url . 'partner=' . $partner . '&notify_id=' . $notify_id;
-        $response_txt = $this->getHttpResponseGET($veryfy_url, $this->cacert);
+        $response_txt = $this->getHttpResponseGET($veryfy_url);
 
         return $response_txt;
     }
@@ -575,14 +497,14 @@ class AliPayWithdrawCashToAccount
      * @param $cacert_url 指定当前工作目录绝对路径
      * return 远程输出的数据
      */
-    private function getHttpResponseGET($url, $cacert_url)
+    private function getHttpResponseGET($url)
     {
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_HEADER, 0); // 过滤HTTP头
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); // 显示输出结果
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true); //SSL证书认证
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2); //严格认证
-        curl_setopt($curl, CURLOPT_CAINFO, $cacert_url); //证书地址
+        curl_setopt($curl, CURLOPT_CAINFO, $this->cacert); //证书地址
         $responseText = curl_exec($curl);
         //var_dump( curl_error($curl) );//如果执行curl过程中出现异常，可打开此开关，以便查看异常内容
         curl_close($curl);
@@ -590,15 +512,19 @@ class AliPayWithdrawCashToAccount
         return $responseText;
     }
 
-    public function getHttpResponsePost($url,$cacert_url,$params)
+    public function getHttpResponsePost($paramsArr)
     {
-//        $url = "https://openapi.alipay.com/gateway.do";
+        $params = "";
+        foreach($paramsArr as $k=>$v){
+            $params.= $k.'='.$v."&";
+        }
+        $params = rtrim($params,"&");
         $ch = curl_init();
-        curl_setopt($ch , CURLOPT_URL , $url);
+        curl_setopt($ch , CURLOPT_URL , $this->https_url);
         curl_setopt($ch , CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true); // https请求 不验证证书和hosts
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2); //严格认证
-        curl_setopt($ch, CURLOPT_CAINFO, $cacert_url); //证书地址
+        curl_setopt($ch, CURLOPT_CAINFO, $this->cacert); //证书地址
         curl_setopt($ch , CURLOPT_POST, 1);
         curl_setopt($ch , CURLOPT_POSTFIELDS,$params);
         $output = curl_exec($ch);
